@@ -7,3 +7,7 @@
 4. Run the application via command: `java -jar rest-0.0.1-SNAPSHOT.jar`
 
 Application starts on localhost at port: 8080
+
+#### Branches
+1. local-db : Connected to a local database (Arraylist)
+2. master : Connected to a PostgreSQL database
