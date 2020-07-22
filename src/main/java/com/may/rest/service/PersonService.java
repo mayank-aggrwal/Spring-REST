@@ -18,13 +18,8 @@ public class PersonService {
     private final PersonDao personDao;
     private static final Logger LOGGER = LogManager.getLogger(PersonService.class);
 
-//    @Autowired
-//    public PersonService(@Qualifier("fakeDao") PersonDao personDao) {
-//        this.personDao = personDao;
-//    }
-
     @Autowired
-    public PersonService(@Qualifier("PostgresDao") PersonDao personDao) {
+    public PersonService(@Qualifier("fakeDao") PersonDao personDao) {
         this.personDao = personDao;
     }
 
