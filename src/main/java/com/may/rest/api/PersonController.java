@@ -63,4 +63,9 @@ public class PersonController {
         return "Spring application is up and running";
     }
 
+    @GetMapping(path = "/live")
+    public String livenessProbeHandler() {
+        return "Application is live";
+    }
+
 }

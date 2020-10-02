@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.Map;
 
 // This class is to be instantiated as a bean (class is to be served as a repository)
 @Repository("fakeDao")
@@ -43,9 +44,9 @@ public class FakePersonDataAccessService implements PersonDao {
     public int updatePerson(UUID id, Person person) {
         return selectPersonById(id)
                 .map(p -> {
-                    int idx = DB.indexOf(p);
-                    if(idx >= 0) {
-                        DB.set(idx, new Person(p.getId(), person.getName()));
+                    int index = DB.indexOf(p);
+                    if(index >= 0) {
+                        DB.set(index, new Person(p.getId(), person.getName()));
                         return 1;
                     }
                     return 0;
