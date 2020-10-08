@@ -1,6 +1,7 @@
 package com.may.rest.api;
 
 import com.may.rest.entity.AppUser;
+import com.may.rest.dto.UserDto;
 import com.may.rest.service.AppUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,24 +20,22 @@ public class AppUserController {
     }
 
     @GetMapping("{userId}")
-    public AppUser get(@PathVariable("userId") long userId) {
+    public UserDto get(@PathVariable("userId") long userId) {
         return service.get(userId);
     }
 
     @GetMapping
-    public List<AppUser> getAll() {
+    public List<UserDto> getAll() {
         return service.getAll();
     }
 
-    //TODO Replace AppUser persistent entity with a simple POJO or DTO object.
     @PostMapping
-    public AppUser create(@RequestBody AppUser user) {
+    public UserDto create(@RequestBody UserDto user) {
         return service.save(user);
     }
 
-    //TODO Replace AppUser persistent entity with a simple POJO or DTO object.
     @PutMapping("{userId}")
-    public AppUser update(@PathVariable("userId") long userId, @RequestBody AppUser user) {
+    public UserDto update(@PathVariable("userId") long userId, @RequestBody UserDto user) {
         return service.update(userId, user);
     }
 
