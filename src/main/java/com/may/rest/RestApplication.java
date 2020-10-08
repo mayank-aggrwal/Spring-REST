@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class RestApplication {
 
-	private static Logger LOGGER = LogManager.getLogger(RestApplication.class);
+	private static final Logger LOGGER = LogManager.getLogger(RestApplication.class);
 
 	public static void main(String[] args) {
 		LOGGER.info("Starting your application...");
