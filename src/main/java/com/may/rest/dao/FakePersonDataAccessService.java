@@ -18,5 +18,12 @@ public class FakePersonDataAccessService implements PersonDao {
 
     private static List<Person> DB = new ArrayList<>();
     private static final Logger LOGGER = LogManager.getLogger(FakePersonDataAccessService.class);
+    
+    @Override
+    public int insertPerson(UUID id, Person person) {
+        LOGGER.info("Inserting into DB, person with id: {}, name: {}", id, person.getName());
+        DB.add(new Person(id, person.getName()));
+        return 0;
+    }
 
 }
